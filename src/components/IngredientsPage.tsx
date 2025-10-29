@@ -5,7 +5,6 @@ import {
   fetchAllIngredients,
   filterMealsByMultipleIngredients,
 } from "../services/mealApi";
-import ThemeToggle from "./ThemeToggle";
 import "./IngredientsPage.css";
 
 const IngredientsPage = () => {
@@ -184,7 +183,6 @@ const IngredientsPage = () => {
 
   return (
     <div className="ingredients-page">
-      <ThemeToggle />
       <div className="search-header">
         <button className="back-button" onClick={() => navigate("/")}>
           <svg

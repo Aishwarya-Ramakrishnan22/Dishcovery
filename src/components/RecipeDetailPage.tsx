@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getMealById } from "../services/mealApi";
 import type { Meal } from "../services/mealApi";
-import ThemeToggle from "./ThemeToggle";
 import "./RecipeDetailPage.css";
 
 const RecipeDetailPage = () => {
@@ -62,7 +61,6 @@ const RecipeDetailPage = () => {
   if (loading) {
     return (
       <div className="recipe-detail-page">
-        <ThemeToggle />
         <div className="loading-container">
           <div className="loading-spinner"></div>
           <p className="loading-text">Loading recipe...</p>
@@ -74,7 +72,6 @@ const RecipeDetailPage = () => {
   if (!meal) {
     return (
       <div className="recipe-detail-page">
-        <ThemeToggle />
         <div className="empty-state">
           <span className="empty-icon">😕</span>
           <p className="empty-text">Recipe not found</p>
@@ -91,8 +88,6 @@ const RecipeDetailPage = () => {
 
   return (
     <div className="recipe-detail-page">
-      <ThemeToggle />
-
       {/* Header */}
       <div className="detail-header">
         <button className="back-button" onClick={() => navigate("/recipes")}>

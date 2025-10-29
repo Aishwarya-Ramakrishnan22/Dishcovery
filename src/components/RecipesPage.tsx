@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useStore } from "../store/useStore";
 import { getMealById } from "../services/mealApi";
-import ThemeToggle from "./ThemeToggle";
 import "./RecipesPage.css";
 
 interface MealWithScore {
@@ -101,7 +100,6 @@ const RecipesPage = () => {
 
   return (
     <div className="recipes-page">
-      <ThemeToggle />
       <div className="recipes-header">
         <button
           className="back-button"
