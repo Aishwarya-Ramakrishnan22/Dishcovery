@@ -32,6 +32,7 @@
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.02),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   color: #007aff;
+  outline: none;
 }
 
 :root.dark-mode .back-button {
@@ -422,6 +423,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   margin-top: 20px;
+  outline: none;
 }
 
 .back-btn:hover {

@@ -39,6 +39,7 @@
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.02),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   color: #007aff;
+  outline: none;
 }
 
 :root.dark-mode .back-button {
@@ -182,10 +183,12 @@
 
 .ingredients-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(5, minmax(160px, 180px));
   gap: 16px;
   justify-items: center;
+  justify-content: center;
   padding: 0 20px;
+  margin: 0 auto;
 }
 
 .ingredient-card {
@@ -206,6 +209,7 @@
   text-align: center;
   width: 100%;
   max-width: 180px;
+  outline: none;
 }
 
 :root.dark-mode .ingredient-card {
@@ -286,6 +290,137 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
+.ingredient-card:focus-visible {
+  outline: 2px solid #007aff;
+  outline-offset: 2px;
+}
+
+.show-more-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background: rgba(0, 122, 255, 0.08);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1.5px dashed rgba(0, 122, 255, 0.3);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  width: 100%;
+  max-width: 180px;
+  outline: none;
+  min-height: 140px;
+  margin: 0 auto;
+}
+
+:root.dark-mode .show-more-card {
+  background: rgba(0, 122, 255, 0.12);
+  border: 1.5px dashed rgba(0, 122, 255, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.show-more-card:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 122, 255, 0.15);
+  border: 1.5px dashed rgba(0, 122, 255, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.15);
+}
+
+:root.dark-mode .show-more-card:hover {
+  background: rgba(0, 122, 255, 0.2);
+  border: 1.5px dashed rgba(0, 122, 255, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.25);
+}
+
+.show-more-card:active {
+  transform: translateY(0);
+}
+
+.show-more-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007aff;
+  transition: transform 0.2s ease;
+}
+
+.show-more-card:hover .show-more-icon {
+  transform: scale(1.1);
+}
+
+.show-more-text {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #007aff;
+  letter-spacing: -0.01em;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.show-more-count {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #007aff;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.show-more-card:hover .show-more-count {
+  opacity: 1;
+}
+
+.show-less-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px auto 0;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #007aff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  outline: none;
+}
+
+:root.dark-mode .show-less-btn {
+  background: rgba(42, 42, 46, 0.72);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.show-less-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+:root.dark-mode .show-less-btn:hover {
+  background: rgba(42, 42, 46, 0.9);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.show-less-btn:active {
+  transform: translateY(0);
+}
+
 .show-more-btn {
   display: flex;
   align-items: center;
@@ -304,6 +439,7 @@
   font-weight: 500;
   color: #007aff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  outline: none;
 }
 
 :root.dark-mode .show-more-btn {
@@ -423,6 +559,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   letter-spacing: -0.01em;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  outline: none;
 }
 
 .find-recipes-btn:hover {
@@ -499,6 +636,22 @@
     padding: 12px;
   }
 
+  .show-more-card {
+    max-width: 150px;
+    padding: 12px;
+    min-height: 120px;
+  }
+
+  .show-more-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .show-more-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
   .ingredient-image-container {
     width: 64px;
     height: 64px;
@@ -564,6 +717,30 @@
   .ingredient-card {
     max-width: 120px;
     padding: 10px;
+  }
+
+  .show-more-card {
+    max-width: 120px;
+    padding: 10px;
+    min-height: 110px;
+  }
+
+  .show-more-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .show-more-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .show-more-text {
+    font-size: 0.875rem;
+  }
+
+  .show-more-count {
+    font-size: 0.8125rem;
   }
 
   .ingredient-image-container {
