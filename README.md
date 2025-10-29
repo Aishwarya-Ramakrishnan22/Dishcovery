@@ -4,6 +4,8 @@
 
 Dishcovery is a modern recipe discovery application that helps you find amazing recipes based on the ingredients you have in your kitchen. Simply select your available ingredients, and we'll suggest delicious meals you can make right now!
 
+🔗 **[Live Demo](https://dishcovery-ivory-gamma.vercel.app/)** - Try it now!
+
 ## ✨ Features
 
 - 🔍 **Ingredient-Based Search**: Select from categorized ingredients (Vegetables, Fruits, Proteins, Dairy, Grains)
