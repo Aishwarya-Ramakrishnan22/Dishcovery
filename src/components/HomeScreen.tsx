@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Banner from "../assets/Banner.jpg";
 import "./HomeScreen.css";
 
 const HomeScreen = () => {
@@ -20,8 +21,8 @@ const HomeScreen = () => {
         <div className="image-container">
           <div className="image-wrapper">
             <img
-              src="https://images.unsplash.com/photo-1593197003664-249c70744f00?w=800"
-              alt="Flour in a bowl"
+              src={Banner}
+              alt="Ingredients on a table"
               className="hero-image"
             />
           </div>
