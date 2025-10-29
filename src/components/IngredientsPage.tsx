@@ -5,7 +5,6 @@ import {
   fetchAllIngredients,
   filterMealsByMultipleIngredients,
 } from "../services/mealApi";
-import ThemeToggle from "./ThemeToggle";
 import "./IngredientsPage.css";
 
 const IngredientsPage = () => {
@@ -24,7 +23,7 @@ const IngredientsPage = () => {
     new Set()
   );
 
-  const INITIAL_DISPLAY_COUNT = 8;
+  const INITIAL_DISPLAY_COUNT = 4;
 
   useEffect(() => {
     const loadIngredients = async () => {
@@ -184,7 +183,6 @@ const IngredientsPage = () => {
 
   return (
     <div className="ingredients-page">
-      <ThemeToggle />
       <div className="search-header">
         <button className="back-button" onClick={() => navigate("/")}>
           <svg
@@ -307,57 +305,58 @@ const IngredientsPage = () => {
                         )}
                       </button>
                     ))}
+
+                    {hasMore && !isExpanded && (
+                      <button
+                        className="show-more-card"
+                        onClick={() => toggleCategoryExpanded(category.id)}
+                      >
+                        <div className="show-more-icon">
+                          <svg
+                            width="40"
+                            height="40"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12 5V19M5 12H19"
+                              stroke="currentColor"
+                              strokeWidth="2.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </div>
+                        <span className="show-more-text">Show More</span>
+                        <span className="show-more-count">
+                          +{category.ingredients.length - INITIAL_DISPLAY_COUNT}
+                        </span>
+                      </button>
+                    )}
                   </div>
 
-                  {hasMore && (
+                  {hasMore && isExpanded && (
                     <button
-                      className="show-more-btn"
+                      className="show-less-btn"
                       onClick={() => toggleCategoryExpanded(category.id)}
                     >
-                      {isExpanded ? (
-                        <>
-                          <span>Show Less</span>
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M18 15L12 9L6 15"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </>
-                      ) : (
-                        <>
-                          <span>
-                            Show More (
-                            {category.ingredients.length -
-                              INITIAL_DISPLAY_COUNT}{" "}
-                            more)
-                          </span>
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6 9L12 15L18 9"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </>
-                      )}
+                      <span>Show Less</span>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18 15L12 9L6 15"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
                     </button>
                   )}
                 </div>

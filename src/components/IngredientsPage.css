@@ -1,12 +1,7 @@
 .ingredients-page {
   min-height: 100vh;
-  background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 50%, #fafafa 100%);
-  padding-bottom: 100px;
-  transition: background 0.3s ease;
-}
-
-:root.dark-mode .ingredients-page {
   background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
+  padding-bottom: 100px;
 }
 
 .search-header {
@@ -29,34 +24,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(42, 42, 46, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.02),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  color: #007aff;
-}
-
-:root.dark-mode .back-button {
-  background: rgba(42, 42, 46, 0.72);
-  border: 0.5px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: #007aff;
+  outline: none;
 }
 
 .back-button:hover {
-  background: rgba(255, 255, 255, 0.85);
-  border: 0.5px solid rgba(0, 0, 0, 0.12);
-  transform: scale(1.05);
-}
-
-:root.dark-mode .back-button:hover {
   background: rgba(42, 42, 46, 0.85);
   border: 0.5px solid rgba(255, 255, 255, 0.12);
+  transform: scale(1.05);
 }
 
 .back-button:active {
@@ -68,30 +52,18 @@
   display: flex;
   align-items: center;
   flex: 1;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(42, 42, 46, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 10px 20px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.02),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-:root.dark-mode .search-container {
-  background: rgba(42, 42, 46, 0.72);
-  border: 0.5px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
 .search-container:hover {
-  background: rgba(255, 255, 255, 0.85);
-  border: 0.5px solid rgba(0, 0, 0, 0.12);
-}
-
-:root.dark-mode .search-container:hover {
   background: rgba(42, 42, 46, 0.85);
   border: 0.5px solid rgba(255, 255, 255, 0.12);
 }
@@ -109,7 +81,7 @@
   padding: 6px 12px 6px 36px;
   font-size: 1.0625rem;
   font-weight: 400;
-  color: #1d1d1f;
+  color: #ffffff;
   background: transparent;
   border: none;
   outline: none;
@@ -118,15 +90,7 @@
   letter-spacing: -0.01em;
 }
 
-:root.dark-mode .search-input {
-  color: #ffffff;
-}
-
 .search-input::placeholder {
-  color: #86868b;
-}
-
-:root.dark-mode .search-input::placeholder {
   color: #a1a1a6;
 }
 
@@ -169,23 +133,20 @@
 .category-title {
   font-size: 1.75rem;
   font-weight: 600;
-  color: #1d1d1f;
+  color: #ffffff;
   margin: 0;
   letter-spacing: -0.02em;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-  transition: color 0.3s ease;
-}
-
-:root.dark-mode .category-title {
-  color: #ffffff;
 }
 
 .ingredients-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(5, minmax(160px, 180px));
   gap: 16px;
   justify-items: center;
+  justify-content: center;
   padding: 0 20px;
+  margin: 0 auto;
 }
 
 .ingredient-card {
@@ -195,33 +156,22 @@
   align-items: center;
   gap: 12px;
   padding: 16px;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(42, 42, 46, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   text-align: center;
   width: 100%;
   max-width: 180px;
-}
-
-:root.dark-mode .ingredient-card {
-  background: rgba(42, 42, 46, 0.72);
-  border: 1.5px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  outline: none;
 }
 
 .ingredient-card:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.9);
-  border: 1.5px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-
-:root.dark-mode .ingredient-card:hover {
   background: rgba(42, 42, 46, 0.9);
   border: 1.5px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
@@ -233,14 +183,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   overflow: hidden;
-  transition: background 0.3s ease;
-}
-
-:root.dark-mode .ingredient-image-container {
-  background: rgba(255, 255, 255, 0.05);
 }
 
 .ingredient-image {
@@ -286,6 +231,111 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
+.ingredient-card:focus-visible {
+  outline: 2px solid #007aff;
+  outline-offset: 2px;
+}
+
+.show-more-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background: rgba(0, 122, 255, 0.12);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1.5px dashed rgba(0, 122, 255, 0.4);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 100%;
+  max-width: 180px;
+  outline: none;
+  min-height: 140px;
+  margin: 0 auto;
+}
+
+.show-more-card:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 122, 255, 0.2);
+  border: 1.5px dashed rgba(0, 122, 255, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.25);
+}
+
+.show-more-card:active {
+  transform: translateY(0);
+}
+
+.show-more-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007aff;
+  transition: transform 0.2s ease;
+}
+
+.show-more-card:hover .show-more-icon {
+  transform: scale(1.1);
+}
+
+.show-more-text {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #007aff;
+  letter-spacing: -0.01em;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+}
+
+.show-more-count {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #007aff;
+  opacity: 0.8;
+}
+
+.show-more-card:hover .show-more-count {
+  opacity: 1;
+}
+
+.show-less-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px auto 0;
+  padding: 12px 24px;
+  background: rgba(42, 42, 46, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #007aff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.show-less-btn:hover {
+  background: rgba(42, 42, 46, 0.9);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.show-less-btn:active {
+  transform: translateY(0);
+}
+
 .show-more-btn {
   display: flex;
   align-items: center;
@@ -293,35 +343,24 @@
   gap: 8px;
   margin: 24px auto 0;
   padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(42, 42, 46, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 0.9375rem;
   font-weight: 500;
   color: #007aff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-:root.dark-mode .show-more-btn {
-  background: rgba(42, 42, 46, 0.72);
-  border: 1.5px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  outline: none;
 }
 
 .show-more-btn:hover {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1.5px solid rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-:root.dark-mode .show-more-btn:hover {
   background: rgba(42, 42, 46, 0.9);
   border: 1.5px solid rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -356,11 +395,6 @@
 .loading-text {
   font-size: 1.125rem;
   font-weight: 500;
-  color: #1d1d1f;
-  transition: color 0.3s ease;
-}
-
-:root.dark-mode .loading-text {
   color: #ffffff;
 }
 
@@ -370,13 +404,8 @@
   color: #1d1d1f;
   letter-spacing: -0.01em;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-  transition: color 0.3s ease;
   line-height: 1.3;
   word-break: break-word;
-}
-
-:root.dark-mode .ingredient-name {
-  color: #ffffff;
 }
 
 .check-mark {
@@ -423,6 +452,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   letter-spacing: -0.01em;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  outline: none;
 }
 
 .find-recipes-btn:hover {
@@ -499,6 +529,22 @@
     padding: 12px;
   }
 
+  .show-more-card {
+    max-width: 150px;
+    padding: 12px;
+    min-height: 120px;
+  }
+
+  .show-more-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .show-more-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
   .ingredient-image-container {
     width: 64px;
     height: 64px;
@@ -564,6 +610,30 @@
   .ingredient-card {
     max-width: 120px;
     padding: 10px;
+  }
+
+  .show-more-card {
+    max-width: 120px;
+    padding: 10px;
+    min-height: 110px;
+  }
+
+  .show-more-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .show-more-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .show-more-text {
+    font-size: 0.875rem;
+  }
+
+  .show-more-count {
+    font-size: 0.8125rem;
   }
 
   .ingredient-image-container {

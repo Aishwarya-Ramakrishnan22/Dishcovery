@@ -9,33 +9,21 @@
 }
 
 .nav-container {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(42, 42, 46, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 10px 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.02),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-:root.dark-mode .nav-container {
-  background: rgba(42, 42, 46, 0.72);
-  border: 0.5px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
 .nav-container:hover {
-  background: rgba(255, 255, 255, 0.85);
-  border: 0.5px solid rgba(0, 0, 0, 0.12);
-}
-
-:root.dark-mode .nav-container:hover {
   background: rgba(42, 42, 46, 0.85);
   border: 0.5px solid rgba(255, 255, 255, 0.12);
 }

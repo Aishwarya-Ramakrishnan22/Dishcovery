@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import ThemeToggle from "./ThemeToggle";
 import "./HomeScreen.css";
 
 const HomeScreen = () => {
@@ -7,7 +6,6 @@ const HomeScreen = () => {
 
   return (
     <div className="home-screen">
-      <ThemeToggle />
       <div className="hero-section">
         <h1 className="hero-title">
           Turn Your Ingredients Into
