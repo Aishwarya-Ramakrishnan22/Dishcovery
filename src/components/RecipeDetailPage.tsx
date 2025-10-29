@@ -48,14 +48,39 @@ const RecipeDetailPage = () => {
 
   const getInstructions = () => {
     if (!meal?.strInstructions) return [];
+
     // Split by newlines and filter out empty strings
-    return meal.strInstructions
+    const lines = meal.strInstructions
       .split(/\r?\n/)
-      .filter((step) => step.trim().length > 0)
-      .map((step, index) => ({
-        number: index + 1,
-        text: step.trim(),
-      }));
+      .map((line) => line.trim())
+      .filter((line) => line.length > 0);
+
+    // Merge lines that are just step numbers with the next line
+    const mergedSteps: string[] = [];
+    let i = 0;
+
+    while (i < lines.length) {
+      const currentLine = lines[i];
+
+      // Check if current line is just a step number or label (e.g., "step 1", "STEP 1", "1.", etc.)
+      const isStepLabel = /^(step\s*\d+\.?|STEP\s*\d+\.?|\d+\.?)$/i.test(
+        currentLine
+      );
+
+      if (isStepLabel && i + 1 < lines.length) {
+        // Merge with next line
+        mergedSteps.push(lines[i + 1]);
+        i += 2; // Skip both lines
+      } else {
+        mergedSteps.push(currentLine);
+        i++;
+      }
+    }
+
+    return mergedSteps.map((step, index) => ({
+      number: index + 1,
+      text: step,
+    }));
   };
 
   if (loading) {
@@ -216,21 +241,17 @@ const RecipeDetailPage = () => {
                 </svg>
                 <span>Watch on YouTube</span>
               </a>
+              {meal.strSource && (
+                <a
+                  href={meal.strSource}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="source-link-subtitle"
+                >
+                  View Original Recipe →
+                </a>
+              )}
             </div>
-          </section>
-        )}
-
-        {/* Source Link (if available) */}
-        {meal.strSource && (
-          <section className="detail-section">
-            <a
-              href={meal.strSource}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="source-link"
-            >
-              View Original Recipe →
-            </a>
           </section>
         )}
       </div>
